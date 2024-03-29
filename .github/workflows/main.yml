@@ -1,21 +1,17 @@
-name: Cypress Tests and Heroku Deployment
+name: Deploy
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  cypress-run:
+  build:
     runs-on: ubuntu-latest
-    environment: Test
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-        
-      - name: Deploy to Heroku
-        env:
-          HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
-        run: |
-          # Set up Heroku git remote
-          git remote add heroku https://$HEROKU_API_KEY@git.heroku.com/tddah-fe.git
-
-          # Push changes to Heroku
-          git push heroku HEAD:main
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.13.15 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "tddah-fe" #Must be unique in Heroku
+          heroku_email: "florenzobauer@gmail.com"
