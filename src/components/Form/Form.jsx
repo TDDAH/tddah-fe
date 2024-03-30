@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './Form.css'
+import { useNavigate } from 'react-router-dom';
+
 function Form() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     owner: '',
-    GithubName: ''
+    name: ''
   });
 
   const handleChange = (event) => {
@@ -16,7 +19,7 @@ function Form() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-      if(formData.owner.trim() == '' || formData.GithubName.trim() == ''){
+      if(formData.owner.trim() === '' || formData.name.trim() === ''){
         throw new Error('Please fill out the form')
       }
     try {
@@ -25,13 +28,14 @@ function Form() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: formData
       });
       
       if (response.ok) {
         console.log('Form submitted successfully!');
         console.log(response)
-        setFormData({ owner: '', GithubName: '' });
+        setFormData({ owner: '', name: '' });
+        navigate('/home');
       } else {
         console.error('Failed to submit form');
       }
@@ -52,8 +56,8 @@ function Form() {
       />
       <input 
         type="text" 
-        name="GithubName" 
-        value={formData.GithubName} 
+        name="name" 
+        value={formData.name} 
         onChange={handleChange} 
         placeholder="Github Repo Name" 
         className="form-input" 

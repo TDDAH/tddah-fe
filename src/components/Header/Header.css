@@ -7,8 +7,9 @@
   margin-bottom: 0.1em;
 }
 
-.title-long {
-  font-size: .5em;
+.full-title {
+  text-align: center;
+  font-size: 1 em;
   color: #333;
 }
 

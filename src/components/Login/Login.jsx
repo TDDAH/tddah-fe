@@ -31,7 +31,6 @@ function Login() {
 
     try {
       console.log('Logging in:', loginData);
-      // Implement your login logic here
       navigate('/home');
     } catch (error) {
       console.error('Error logging in:', error);
@@ -57,7 +56,6 @@ function Login() {
 
     try {
       console.log('Signing up:', signupData);
-      // Implement your signup logic here
       navigate('/home');
     } catch (error) {
       console.error('Error signing up:', error);
