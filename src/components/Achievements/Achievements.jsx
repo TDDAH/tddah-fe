@@ -12,7 +12,7 @@ function Achievements() {
 
   return (
     <div>
-      Achievements
+     Repos and Achievements here
     </div>
   )
 }

@@ -23,7 +23,7 @@ function Redirect() {
                 })
             };
 
-            fetch('https://github.com/login/oauth/access_token', requestOptions)
+            fetch('https://localhost:3001/login/oauth/access_token', requestOptions)
                 .then(response => {
                     if (response.ok) {
                         console.log('response is ok')
