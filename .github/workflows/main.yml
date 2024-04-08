@@ -18,4 +18,4 @@ jobs:
           git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/tddah-fe.git
 
           # Push changes to Heroku
-          git push heroku HEAD:main
+          git push heroku main
