@@ -7,8 +7,8 @@ function Header() {
       <img src={logo} alt='Logo' className='logo' />
       <h1 className='title'>
         TTDAH!
-        <h4 className='title-long'>Test-Driven Developement Achievement Hunter</h4>
       </h1>
+        <h4 className='title-long'>Test-Driven Developement Achievement Hunter</h4>
     </div>
   )
 }
