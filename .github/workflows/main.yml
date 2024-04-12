@@ -14,7 +14,7 @@ jobs:
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
         run: |
-          # Set up Heroku git remote
+          # Set up Heroku git remotes
            git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/tddah-fe.git
 
           # Push changes to Heroku
