@@ -5,7 +5,6 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import Login from '../Login/Login'
 import Redirect from '../Redirect/Redirect'
-import Achievements from '../Achievements/Achievements';
 import SubmitTests from '../SubmitTests/SubmitTests'
 
 function App() {
