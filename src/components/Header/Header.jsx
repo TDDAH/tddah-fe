@@ -6,7 +6,7 @@ function Header() {
     <div className='header'>
       <img src={logo} alt='Logo' className='logo' />
       <h1 className='title'>
-        TTDAH!
+        TDDAH!
       </h1>
         <h4 className='title-long'>Test-Driven Developement Achievement Hunter</h4>
     </div>
