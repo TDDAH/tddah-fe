@@ -3,7 +3,7 @@ import './Login.css';
 
 function Login() {
   function handleClick() {
-    window.location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}`
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&scope=user:email`
 
 
   }
