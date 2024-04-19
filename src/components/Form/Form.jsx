@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import './Form.css'
 function Form() {
+
+  const user = JSON.parse(localStorage.getItem('user'))
+  const userId = user.id
+
   const [formData, setFormData] = useState({
     owner: '',
     name: ''
@@ -20,7 +24,7 @@ function Form() {
         throw new Error('Please fill out the form')
       }
     try {
-      const response = await fetch('https://tddah-be-39c5a52e8b65.herokuapp.com/api/v1/users/1/repos', {
+      const response = await fetch(`https://tddah-be-39c5a52e8b65.herokuapp.com/api/v1/users/${userId}/repos`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -1,16 +1,16 @@
-import "./LoginBtn.css"
+import './LoginBtn.css';
 
-function LoginBtn () {
+function LoginBtn() {
   function handleClick() {
-    const redirectUri = encodeURIComponent('http://localhost:8080//oauth/redirect/login');
-    window.location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&redirect_uri=${redirectUri}&scope=user:email`;
+    localStorage.setItem('loginStep', 'login');
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&scope=user:email`;
   }
 
   return (
-  <button className="github-login-btn" onClick={handleClick}>
-    Login with Github
-  </button>
-)
+    <button className="github-button-login" onClick={handleClick}>
+      Login with GitHub
+    </button>
+  );
 }
 
-export default LoginBtn
+export default LoginBtn;
