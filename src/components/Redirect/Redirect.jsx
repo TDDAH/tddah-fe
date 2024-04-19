@@ -22,11 +22,11 @@ function Redirect() {
         }),
       };
 
-      fetch("http://localhost:8080/oauth/callback", requestOptions)
+      fetch("https://tddah-fe-server.onrender.com/oauth/callback", requestOptions)
         .then((res) => res.json())
         .then((data) => {
           if (data.access_token) {
-            fetch(`http://localhost:8080/oauth/user/${data.access_token}`)
+            fetch(`https://tddah-fe-server.onrender.com/oauth/user/${data.access_token}`)
               .then((res) => res.json())
               .then((secondData) => {
                 navigate("/home");
@@ -58,11 +58,11 @@ function Redirect() {
         }),
       };
 
-      fetch("http://localhost:8080/oauth/callback", requestOptions)
+      fetch("https://tddah-fe-server.onrender.com/oauth/callback", requestOptions)
         .then((res) => res.json())
         .then((data) => {
           if (data.access_token) {
-            fetch(`http://localhost:8080/oauth/user/${data.access_token}`)
+            fetch(`https://tddah-fe-server.onrender.com/oauth/user/${data.access_token}`)
               .then((res) => res.json())
               .then((secondData) => {
                 const reqBody = {
@@ -70,7 +70,7 @@ function Redirect() {
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify({
                     name: secondData.name,
-                    email: localStorage.getItem("githubEmail") ? localStorage.getItem("githubEmail") : secondData.email,
+                    email: secondData.email ? secondData.email: localStorage.getItem("githubEmail"),
                     provider: "github",
                     uid: secondData.id,
                   }),
