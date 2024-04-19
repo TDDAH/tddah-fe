@@ -3,11 +3,11 @@ import './SubmitTests.css'
 import Form from '../Form/Form'
 import Navbar from '../Navbar/Navbar'
 
-function SubmitTests() {
+function SubmitTests({ userId }) {
   return (
     <div>
       <Navbar />
-      <Form />
+      <Form userId={userId} />
     </div>
   )
 }

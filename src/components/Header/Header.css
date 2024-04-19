@@ -1,6 +1,12 @@
 .header {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
   padding-bottom: 20px;
+  position: relative; 
 }
+
 .title {
   text-align: center;
   font-size: 2em;
@@ -8,13 +14,16 @@
 }
 
 .title-long {
-  font-size: .5em;
+  font-size: 0.5em;
   color: #333;
+  margin-top: 10px; 
 }
 
 .logo {
-  width: 100px; 
-  margin-right: 1em; 
-  position: fixed;
-
+  width: 150px; 
+  position: absolute; 
+  top: 50%;
+  left: 0; 
+  transform: translateY(-50%);
 }
+

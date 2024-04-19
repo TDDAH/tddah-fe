@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react';
+import { useState } from 'react';
+import Navbar from '../Navbar/Navbar';
 
-function Achievements() {
+function AchievementsPage() {
   const [achievements, setAchievements] = useState([])
 
   useEffect(() => {
@@ -16,21 +18,19 @@ function Achievements() {
     return (
       <section className='achievement-card' key={index}>
         <article>Achievement Name: {achiev.attributes.name}</article>
-        <article>Criteria: {achiev.attributes.criteria}</article>
+        <article>Description: {achiev.attributes.criteria}</article>
       </section>
     )
   }, [])
 
-
-
   return (
-    <section className='achievements-section'>
+    <div className='achievements-page-section'>
+      <Navbar />
+      <h1>Achievement List</h1>
       {achievCards}
-    </section>
-      
-      
-    
-  )
+    </div>
+  );
 }
 
-export default Achievements
+
+export default AchievementsPage;
