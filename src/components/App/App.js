@@ -7,6 +7,7 @@ import Login from '../Login/Login';
 import Redirect from '../Redirect/Redirect';
 import SubmitTests from '../SubmitTests/SubmitTests';
 import AchievementsPage from '../AchievementsPage/AchievementsPage';
+import Leaderboards from '../Leaderboards/Leaderboards';
 import { useState } from 'react';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/achievements' element={<AchievementsPage />} />
         <Route path='/submittest' element={<SubmitTests userId={userId}/>} />
         <Route path='/auth/github/callback' element={<Redirect />} />
+        <Route path='/leaderboards' element={<Leaderboards />} />
         {/* <Route path='/*' element={<NotFound />} /> */}
       </Routes>
       {location.pathname !== "/" && <Footer />}

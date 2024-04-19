@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './Form.css'
-function Form() {
+import { useNavigate } from 'react-router-dom';
 
+function Form() {
+  const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem('user'))
   const userId = user.id
 
@@ -42,6 +44,7 @@ function Form() {
     } catch (error) {
       console.error('Error submitting form:', error);
     }
+    navigate('/home')
   };
 
   return (

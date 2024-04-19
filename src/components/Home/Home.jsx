@@ -14,9 +14,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    console.log('users: ', users)
     const githubEmail = localStorage.getItem('githubEmail');
-    console.log('githubEmail: ', githubEmail)
     const userObj = users.find(user => user.attributes.email === githubEmail);
     if (userObj) {
       localStorage.setItem('user', JSON.stringify(userObj));

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 function Footer() {
   const navigate = useNavigate()
   const handleLoginClick = () => {
+    localStorage.clear()
   navigate('/')
   }
   
